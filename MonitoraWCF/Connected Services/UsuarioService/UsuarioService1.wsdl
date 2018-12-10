@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UsuarioService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IUsuarioService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" />
+      <xsd:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CompLine.Util.Paginacao" />
+      <xsd:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.DAL.Model" />
+      <xsd:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO.Pesquisa" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUsuarioService_CapturarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioId_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioId" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAD_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAD" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioADResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioEmail" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioCPF_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioCPF" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioCPF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioCPFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAntigoId_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAntigoId" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAntigoId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAntigoIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAntigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAntigo" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAntigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAntigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_ValidarUsuarioAntigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioAntigo" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_ValidarUsuarioAntigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioAntigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAntigoCPF_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAntigoCPF" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAntigoCPF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAntigoCPFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAntigoMatricula_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAntigoMatricula" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_CapturarUsuarioAntigoMatricula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapturarUsuarioAntigoMatriculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_TrocarSenhaPar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TrocarSenhaPar" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_TrocarSenhaPar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TrocarSenhaParResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AlterarSenha_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarSenha" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AlterarSenha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_LembrarSenha_InputMessage">
+    <wsdl:part name="parameters" element="tns:LembrarSenha" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_LembrarSenha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LembrarSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_TratarEmailAsteriscos_InputMessage">
+    <wsdl:part name="parameters" element="tns:TratarEmailAsteriscos" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_TratarEmailAsteriscos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TratarEmailAsteriscosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetNomesUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNomesUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetNomesUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNomesUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetUnidadesByUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnidadesByUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetUnidadesByUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnidadesByUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AdicionarUsuarioUnidade_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdicionarUsuarioUnidade" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AdicionarUsuarioUnidade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdicionarUsuarioUnidadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_RemoverUsuarioUnidade_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverUsuarioUnidade" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_RemoverUsuarioUnidade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverUsuarioUnidadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_RemoverAllUnidadeByUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverAllUnidadeByUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_RemoverAllUnidadeByUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoverAllUnidadeByUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_Salvar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Salvar" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_Salvar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SalvarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_InserirLogAcaoLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLogAcaoLogin" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_InserirLogAcaoLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirLogAcaoLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_ListarSituacao_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSituacao" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_ListarSituacao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSituacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_FiltrarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:FiltrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_FiltrarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FiltrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_InserirUsuarioPortalMe_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirUsuarioPortalMe" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_InserirUsuarioPortalMe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirUsuarioPortalMeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetAllUserBySistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserBySistema" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetAllUserBySistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserBySistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AtualizarSituacaoCadastroUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarSituacaoCadastroUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AtualizarSituacaoCadastroUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarSituacaoCadastroUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetAllUserBySistemaTemp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserBySistemaTemp" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetAllUserBySistemaTemp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserBySistemaTempResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_EnviarEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarEmail" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_EnviarEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetAllUserByPerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserByPerfil" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetAllUserByPerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserByPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AuthenticationByToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticationByToken" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AuthenticationByToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticationByTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AuthenticationByLoginToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticationByLoginToken" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AuthenticationByLoginToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticationByLoginTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AuthenticationByRFIDLoginToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticationByRFIDLoginToken" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_AuthenticationByRFIDLoginToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticationByRFIDLoginTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetUsuariosChefeByPerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuariosChefeByPerfil" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetUsuariosChefeByPerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuariosChefeByPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetUsuarioByMatricula_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuarioByMatricula" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetUsuarioByMatricula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuarioByMatriculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_ValidaSessaoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaSessaoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_ValidaSessaoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaSessaoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_UpdateLastLogAcaoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLastLogAcaoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_UpdateLastLogAcaoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLastLogAcaoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetQuantidadeAcessoUsuariosProtocolo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuantidadeAcessoUsuariosProtocolo" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_GetQuantidadeAcessoUsuariosProtocolo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuantidadeAcessoUsuariosProtocoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_FiltrarLogAcao_InputMessage">
+    <wsdl:part name="parameters" element="tns:FiltrarLogAcao" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_FiltrarLogAcao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FiltrarLogAcaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_VerificarUsuarioDominio_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarUsuarioDominio" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_VerificarUsuarioDominio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarUsuarioDominioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_VerificarAcesso45DiasDominio_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarAcesso45DiasDominio" />
+  </wsdl:message>
+  <wsdl:message name="IUsuarioService_VerificarAcesso45DiasDominio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarAcesso45DiasDominioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUsuarioService">
+    <wsdl:operation name="CapturarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuario" message="tns:IUsuarioService_CapturarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioResponse" message="tns:IUsuarioService_CapturarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioId" message="tns:IUsuarioService_CapturarUsuarioId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioIdResponse" message="tns:IUsuarioService_CapturarUsuarioId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAD" message="tns:IUsuarioService_CapturarUsuarioAD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioADResponse" message="tns:IUsuarioService_CapturarUsuarioAD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioEmail" message="tns:IUsuarioService_CapturarUsuarioEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioEmailResponse" message="tns:IUsuarioService_CapturarUsuarioEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioCPF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioCPF" message="tns:IUsuarioService_CapturarUsuarioCPF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioCPFResponse" message="tns:IUsuarioService_CapturarUsuarioCPF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAntigoId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoId" message="tns:IUsuarioService_CapturarUsuarioAntigoId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoIdResponse" message="tns:IUsuarioService_CapturarUsuarioAntigoId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAntigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigo" message="tns:IUsuarioService_CapturarUsuarioAntigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoResponse" message="tns:IUsuarioService_CapturarUsuarioAntigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuarioAntigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/ValidarUsuarioAntigo" message="tns:IUsuarioService_ValidarUsuarioAntigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/ValidarUsuarioAntigoResponse" message="tns:IUsuarioService_ValidarUsuarioAntigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAntigoCPF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoCPF" message="tns:IUsuarioService_CapturarUsuarioAntigoCPF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoCPFResponse" message="tns:IUsuarioService_CapturarUsuarioAntigoCPF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAntigoMatricula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoMatricula" message="tns:IUsuarioService_CapturarUsuarioAntigoMatricula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoMatriculaResponse" message="tns:IUsuarioService_CapturarUsuarioAntigoMatricula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TrocarSenhaPar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/TrocarSenhaPar" message="tns:IUsuarioService_TrocarSenhaPar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/TrocarSenhaParResponse" message="tns:IUsuarioService_TrocarSenhaPar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/AlterarSenha" message="tns:IUsuarioService_AlterarSenha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/AlterarSenhaResponse" message="tns:IUsuarioService_AlterarSenha_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LembrarSenha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/LembrarSenha" message="tns:IUsuarioService_LembrarSenha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/LembrarSenhaResponse" message="tns:IUsuarioService_LembrarSenha_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TratarEmailAsteriscos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/TratarEmailAsteriscos" message="tns:IUsuarioService_TratarEmailAsteriscos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/TratarEmailAsteriscosResponse" message="tns:IUsuarioService_TratarEmailAsteriscos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNomesUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/GetNomesUsuarios" message="tns:IUsuarioService_GetNomesUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/GetNomesUsuariosResponse" message="tns:IUsuarioService_GetNomesUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnidadesByUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/GetUnidadesByUsuario" message="tns:IUsuarioService_GetUnidadesByUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/GetUnidadesByUsuarioResponse" message="tns:IUsuarioService_GetUnidadesByUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdicionarUsuarioUnidade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/AdicionarUsuarioUnidade" message="tns:IUsuarioService_AdicionarUsuarioUnidade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/AdicionarUsuarioUnidadeResponse" message="tns:IUsuarioService_AdicionarUsuarioUnidade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoverUsuarioUnidade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/RemoverUsuarioUnidade" message="tns:IUsuarioService_RemoverUsuarioUnidade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/RemoverUsuarioUnidadeResponse" message="tns:IUsuarioService_RemoverUsuarioUnidade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoverAllUnidadeByUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/RemoverAllUnidadeByUsuario" message="tns:IUsuarioService_RemoverAllUnidadeByUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/RemoverAllUnidadeByUsuarioResponse" message="tns:IUsuarioService_RemoverAllUnidadeByUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Salvar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/Salvar" message="tns:IUsuarioService_Salvar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/SalvarResponse" message="tns:IUsuarioService_Salvar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLogAcaoLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/InserirLogAcaoLogin" message="tns:IUsuarioService_InserirLogAcaoLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/InserirLogAcaoLoginResponse" message="tns:IUsuarioService_InserirLogAcaoLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarSituacao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/ListarSituacao" message="tns:IUsuarioService_ListarSituacao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/ListarSituacaoResponse" message="tns:IUsuarioService_ListarSituacao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FiltrarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/FiltrarUsuario" message="tns:IUsuarioService_FiltrarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/FiltrarUsuarioResponse" message="tns:IUsuarioService_FiltrarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioPortalMe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/InserirUsuarioPortalMe" message="tns:IUsuarioService_InserirUsuarioPortalMe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/InserirUsuarioPortalMeResponse" message="tns:IUsuarioService_InserirUsuarioPortalMe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserBySistema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/GetAllUserBySistema" message="tns:IUsuarioService_GetAllUserBySistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/GetAllUserBySistemaResponse" message="tns:IUsuarioService_GetAllUserBySistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarSituacaoCadastroUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/AtualizarSituacaoCadastroUsuario" message="tns:IUsuarioService_AtualizarSituacaoCadastroUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/AtualizarSituacaoCadastroUsuarioResponse" message="tns:IUsuarioService_AtualizarSituacaoCadastroUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserBySistemaTemp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/GetAllUserBySistemaTemp" message="tns:IUsuarioService_GetAllUserBySistemaTemp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/GetAllUserBySistemaTempResponse" message="tns:IUsuarioService_GetAllUserBySistemaTemp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/EnviarEmail" message="tns:IUsuarioService_EnviarEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/EnviarEmailResponse" message="tns:IUsuarioService_EnviarEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserByPerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/GetAllUserByPerfil" message="tns:IUsuarioService_GetAllUserByPerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/GetAllUserByPerfilResponse" message="tns:IUsuarioService_GetAllUserByPerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationByToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/AuthenticationByToken" message="tns:IUsuarioService_AuthenticationByToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/AuthenticationByTokenResponse" message="tns:IUsuarioService_AuthenticationByToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationByLoginToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/AuthenticationByLoginToken" message="tns:IUsuarioService_AuthenticationByLoginToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/AuthenticationByLoginTokenResponse" message="tns:IUsuarioService_AuthenticationByLoginToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationByRFIDLoginToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/AuthenticationByRFIDLoginToken" message="tns:IUsuarioService_AuthenticationByRFIDLoginToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/AuthenticationByRFIDLoginTokenResponse" message="tns:IUsuarioService_AuthenticationByRFIDLoginToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosChefeByPerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/GetUsuariosChefeByPerfil" message="tns:IUsuarioService_GetUsuariosChefeByPerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/GetUsuariosChefeByPerfilResponse" message="tns:IUsuarioService_GetUsuariosChefeByPerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioByMatricula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/GetUsuarioByMatricula" message="tns:IUsuarioService_GetUsuarioByMatricula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/GetUsuarioByMatriculaResponse" message="tns:IUsuarioService_GetUsuarioByMatricula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaSessaoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/ValidaSessaoUsuario" message="tns:IUsuarioService_ValidaSessaoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/ValidaSessaoUsuarioResponse" message="tns:IUsuarioService_ValidaSessaoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastLogAcaoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/UpdateLastLogAcaoUsuario" message="tns:IUsuarioService_UpdateLastLogAcaoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/UpdateLastLogAcaoUsuarioResponse" message="tns:IUsuarioService_UpdateLastLogAcaoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuantidadeAcessoUsuariosProtocolo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/GetQuantidadeAcessoUsuariosProtocolo" message="tns:IUsuarioService_GetQuantidadeAcessoUsuariosProtocolo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/GetQuantidadeAcessoUsuariosProtocoloResponse" message="tns:IUsuarioService_GetQuantidadeAcessoUsuariosProtocolo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FiltrarLogAcao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/FiltrarLogAcao" message="tns:IUsuarioService_FiltrarLogAcao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/FiltrarLogAcaoResponse" message="tns:IUsuarioService_FiltrarLogAcao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarUsuarioDominio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/VerificarUsuarioDominio" message="tns:IUsuarioService_VerificarUsuarioDominio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/VerificarUsuarioDominioResponse" message="tns:IUsuarioService_VerificarUsuarioDominio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarAcesso45DiasDominio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuarioService/VerificarAcesso45DiasDominio" message="tns:IUsuarioService_VerificarAcesso45DiasDominio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuarioService/VerificarAcesso45DiasDominioResponse" message="tns:IUsuarioService_VerificarAcesso45DiasDominio_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IUsuarioService" type="tns:IUsuarioService">
+    <wsp:PolicyReference URI="#CustomBinding_IUsuarioService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CapturarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioId">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuarioId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAD">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuarioAD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioEmail">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuarioEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioCPF">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuarioCPF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAntigoId">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAntigo">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuarioAntigo">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/ValidarUsuarioAntigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAntigoCPF">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoCPF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturarUsuarioAntigoMatricula">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/CapturarUsuarioAntigoMatricula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrocarSenhaPar">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/TrocarSenhaPar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/AlterarSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LembrarSenha">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/LembrarSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TratarEmailAsteriscos">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/TratarEmailAsteriscos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNomesUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/GetNomesUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnidadesByUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/GetUnidadesByUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdicionarUsuarioUnidade">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/AdicionarUsuarioUnidade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoverUsuarioUnidade">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/RemoverUsuarioUnidade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoverAllUnidadeByUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/RemoverAllUnidadeByUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salvar">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/Salvar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLogAcaoLogin">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/InserirLogAcaoLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarSituacao">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/ListarSituacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/FiltrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioPortalMe">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/InserirUsuarioPortalMe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserBySistema">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/GetAllUserBySistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarSituacaoCadastroUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/AtualizarSituacaoCadastroUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserBySistemaTemp">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/GetAllUserBySistemaTemp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarEmail">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/EnviarEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserByPerfil">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/GetAllUserByPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationByToken">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/AuthenticationByToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationByLoginToken">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/AuthenticationByLoginToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationByRFIDLoginToken">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/AuthenticationByRFIDLoginToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosChefeByPerfil">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/GetUsuariosChefeByPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioByMatricula">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/GetUsuarioByMatricula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaSessaoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/ValidaSessaoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastLogAcaoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/UpdateLastLogAcaoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuantidadeAcessoUsuariosProtocolo">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/GetQuantidadeAcessoUsuariosProtocolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltrarLogAcao">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/FiltrarLogAcao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarUsuarioDominio">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/VerificarUsuarioDominio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarAcesso45DiasDominio">
+      <soap:operation soapAction="http://tempuri.org/IUsuarioService/VerificarAcesso45DiasDominio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UsuarioService">
+    <wsdl:port name="CustomBinding_IUsuarioService" binding="tns:CustomBinding_IUsuarioService">
+      <soap:address location="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

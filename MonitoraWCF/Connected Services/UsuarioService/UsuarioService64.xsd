@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" />
+  <xs:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CompLine.Util.Paginacao" />
+  <xs:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.DAL.Model" />
+  <xs:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO.Pesquisa" />
+  <xs:element name="CapturarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioResult" nillable="true" type="q1:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioIdResult" nillable="true" type="q2:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activeDirectory" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioADResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioADResult" nillable="true" type="q3:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioEmailResult" nillable="true" type="q4:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioCPF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioCPFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioCPFResult" nillable="true" type="q5:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAntigoId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUsuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAntigoIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioAntigoIdResult" nillable="true" type="q6:TB_USUARIO_ANTIGO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAntigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAntigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioAntigoResult" nillable="true" type="q7:TB_USUARIO_ANTIGO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarUsuarioAntigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senhaCriptografada" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarUsuarioAntigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="ValidarUsuarioAntigoResult" nillable="true" type="q8:TB_USUARIO_ANTIGO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAntigoCPF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAntigoCPFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioAntigoCPFResult" nillable="true" type="q9:TB_USUARIO_ANTIGO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAntigoMatricula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matricula" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapturarUsuarioAntigoMatriculaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="CapturarUsuarioAntigoMatriculaResult" nillable="true" type="q10:TB_USUARIO_ANTIGO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrocarSenhaPar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coUsuario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="hashNovo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="novaSituacao" nillable="true" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrocarSenhaParResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TrocarSenhaParResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarSenha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coUsuario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="senhaAntiga" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senhaNova" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarSenhaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AlterarSenhaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LembrarSenha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coUsuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LembrarSenhaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LembrarSenhaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TratarEmailAsteriscos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TratarEmailAsteriscosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TratarEmailAsteriscosResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNomesUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="codigos" nillable="true" type="q11:ArrayOfdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNomesUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetNomesUsuariosResult" nillable="true" type="q12:ArrayOfKeyValueOfdecimalstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnidadesByUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUsuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnidadesByUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUnidadesByUsuarioResult" nillable="true" type="q13:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdicionarUsuarioUnidade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="rlUserUnit" nillable="true" type="q14:RL_USUARIO_UNIDADE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdicionarUsuarioUnidadeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdicionarUsuarioUnidadeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverUsuarioUnidade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="rlUsuarioUnidade" nillable="true" type="q15:RL_USUARIO_UNIDADE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverUsuarioUnidadeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoverUsuarioUnidadeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverAllUnidadeByUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUsuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoverAllUnidadeByUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Salvar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="usuarioFiltro" nillable="true" type="q16:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SalvarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SalvarResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirLogAcaoLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="logAcao" nillable="true" type="q17:TB_LOG_ACAO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirLogAcaoLoginResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarSituacao">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarSituacaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="ListarSituacaoResult" nillable="true" type="q18:ArrayOfTB_SITUACAO_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FiltrarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="filtraPesquisa" nillable="true" type="q19:TB_USUARIO" />
+        <xs:element minOccurs="0" name="qtdeporPg" type="xs:int" />
+        <xs:element minOccurs="0" name="indice" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FiltrarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="FiltrarUsuarioResult" nillable="true" type="q20:ArrayOfTB_USUARIO" />
+        <xs:element minOccurs="0" name="qtdeTotal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirUsuarioPortalMe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coUsuario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="coUsuarioCadastro" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirUsuarioPortalMeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InserirUsuarioPortalMeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserBySistema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coSistema" type="xs:int" />
+        <xs:element minOccurs="0" name="TpSituacao" type="xs:short" />
+        <xs:element minOccurs="0" name="DtInicio" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DtFim" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="DsEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DsNome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DsCpf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DsLogin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CoEmpresa" type="xs:int" />
+        <xs:element minOccurs="0" name="CoUnidade" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Referencia" type="xs:int" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CompLine.Util.Paginacao" minOccurs="0" name="paginacaoControl" nillable="true" type="q21:PaginacaoControl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserBySistemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="GetAllUserBySistemaResult" nillable="true" type="q22:ArrayOfTB_USUARIO" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CompLine.Util.Paginacao" minOccurs="0" name="paginacaoControl" nillable="true" type="q23:PaginacaoControl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarSituacaoCadastroUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coUsuario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="tpSituacao" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarSituacaoCadastroUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserBySistemaTemp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coSistema" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserBySistemaTempResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="GetAllUserBySistemaTempResult" nillable="true" type="q24:ArrayOfTB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mensagem" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="assunto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RemetenteEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EmailsApontamentos" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarEmailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserByPerfil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coPerfil" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserByPerfilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="GetAllUserByPerfilResult" nillable="true" type="q25:ArrayOfTB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticationByToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticationByTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="AuthenticationByTokenResult" nillable="true" type="q26:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticationByLoginToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticationByLoginTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="AuthenticationByLoginTokenResult" nillable="true" type="q27:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticationByRFIDLoginToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coSeqUser" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticationByRFIDLoginTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="AuthenticationByRFIDLoginTokenResult" nillable="true" type="q28:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsuariosChefeByPerfil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coPerfil" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsuariosChefeByPerfilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="GetUsuariosChefeByPerfilResult" nillable="true" type="q29:ArrayOfTB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsuarioByMatricula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nuMatricula" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsuarioByMatriculaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="GetUsuarioByMatriculaResult" nillable="true" type="q30:TB_USUARIO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaSessaoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coUsuario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dsIp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="coSistema" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidaSessaoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidaSessaoUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLastLogAcaoUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coUsuario" type="xs:decimal" />
+        <xs:element minOccurs="0" name="dsIp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="coSistema" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLastLogAcaoUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateLastLogAcaoUsuarioResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuantidadeAcessoUsuariosProtocolo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dtInicio" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtFim" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuantidadeAcessoUsuariosProtocoloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.DAL.Model" minOccurs="0" name="GetQuantidadeAcessoUsuariosProtocoloResult" nillable="true" type="q31:sp_UsuariosProtocolo_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FiltrarLogAcao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO.Pesquisa" minOccurs="0" name="filterEntity" nillable="true" type="q32:LogAções" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FiltrarLogAcaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" minOccurs="0" name="FiltrarLogAcaoResult" nillable="true" type="q33:ArrayOfTB_LOG_ACAO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarUsuarioDominio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodigoUsuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarUsuarioDominioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerificarUsuarioDominioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarAcesso45DiasDominio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodigoUsuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarAcesso45DiasDominioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerificarAcesso45DiasDominioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

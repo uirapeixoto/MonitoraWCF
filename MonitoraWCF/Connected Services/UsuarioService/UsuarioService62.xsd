@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.DAL.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.DAL.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="sp_UsuariosProtocolo_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CEF" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CaixaSeguradora" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Corretoras" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EscritórioAdvocacia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Filial" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Reguladoras" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="sp_UsuariosProtocolo_Result" nillable="true" type="tns:sp_UsuariosProtocolo_Result" />
+</xs:schema>

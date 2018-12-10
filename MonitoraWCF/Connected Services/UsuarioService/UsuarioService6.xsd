@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CompLine.Core.Security.POCO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TB_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_AREA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_CARGO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_EMPRESA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_SEQ_USUARIO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_UNIDADE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_USUARIO_ANTIGO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DS_EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_HASH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_LOGIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_LOGIN_AD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_NOME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_NOME_UNIDADE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DT_CADASTRO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DT_DESATIVACAO" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DT_NASCIMENTO" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NU_CPF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NU_MATRICULA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RL_PERFIL_USUARIOCHEFE" nillable="true" type="tns:ArrayOfRL_PERFIL_USUARIOCHEFE" />
+      <xs:element minOccurs="0" name="RL_TBPERFIL_TBUSUARIO" nillable="true" type="tns:ArrayOfRL_TBPERFIL_TBUSUARIO" />
+      <xs:element minOccurs="0" name="RL_TBPERFIL_TBUSUARIO1" nillable="true" type="tns:ArrayOfRL_TBPERFIL_TBUSUARIO" />
+      <xs:element minOccurs="0" name="RL_TBPERFIL_TBUSUARIO2" nillable="true" type="tns:ArrayOfRL_TBPERFIL_TBUSUARIO" />
+      <xs:element minOccurs="0" name="RL_USUARIO_UNIDADE" nillable="true" type="tns:ArrayOfRL_USUARIO_UNIDADE" />
+      <xs:element minOccurs="0" name="TB_AREA" nillable="true" type="tns:TB_AREA" />
+      <xs:element minOccurs="0" name="TB_ARQUIVO" nillable="true" type="tns:ArrayOfTB_ARQUIVO" />
+      <xs:element minOccurs="0" name="TB_CARGO" nillable="true" type="tns:TB_CARGO" />
+      <xs:element minOccurs="0" name="TB_LOG_ACAO" nillable="true" type="tns:ArrayOfTB_LOG_ACAO" />
+      <xs:element minOccurs="0" name="TB_SITUACAO_USUARIO" nillable="true" type="tns:TB_SITUACAO_USUARIO" />
+      <xs:element minOccurs="0" name="TP_SITUACAO" nillable="true" type="xs:short" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_USUARIO" nillable="true" type="tns:TB_USUARIO" />
+  <xs:complexType name="ArrayOfRL_PERFIL_USUARIOCHEFE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RL_PERFIL_USUARIOCHEFE" nillable="true" type="tns:RL_PERFIL_USUARIOCHEFE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRL_PERFIL_USUARIOCHEFE" nillable="true" type="tns:ArrayOfRL_PERFIL_USUARIOCHEFE" />
+  <xs:complexType name="RL_PERFIL_USUARIOCHEFE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_PERFIL" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_SEQ_PERFIL_USUARIOCHEFE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_USUARIO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TB_PERFIL" nillable="true" type="tns:TB_PERFIL" />
+      <xs:element minOccurs="0" name="TB_USUARIO" nillable="true" type="tns:TB_USUARIO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="RL_PERFIL_USUARIOCHEFE" nillable="true" type="tns:RL_PERFIL_USUARIOCHEFE" />
+  <xs:complexType name="TB_PERFIL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_SEQ_PERFIL" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_SISTEMA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DS_NOME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RL_PERFIL_MENU" nillable="true" type="tns:ArrayOfRL_PERFIL_MENU" />
+      <xs:element minOccurs="0" name="RL_PERFIL_USUARIOCHEFE" nillable="true" type="tns:ArrayOfRL_PERFIL_USUARIOCHEFE" />
+      <xs:element minOccurs="0" name="RL_TBPERFIL_TBRECURSO" nillable="true" type="tns:ArrayOfRL_TBPERFIL_TBRECURSO" />
+      <xs:element minOccurs="0" name="RL_TBPERFIL_TBUSUARIO" nillable="true" type="tns:ArrayOfRL_TBPERFIL_TBUSUARIO" />
+      <xs:element minOccurs="0" name="TB_SISTEMA" nillable="true" type="tns:TB_SISTEMA" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_PERFIL" nillable="true" type="tns:TB_PERFIL" />
+  <xs:complexType name="ArrayOfRL_PERFIL_MENU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RL_PERFIL_MENU" nillable="true" type="tns:RL_PERFIL_MENU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRL_PERFIL_MENU" nillable="true" type="tns:ArrayOfRL_PERFIL_MENU" />
+  <xs:complexType name="RL_PERFIL_MENU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_MENU" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_PERFIL" type="xs:int" />
+      <xs:element minOccurs="0" name="TB_PERFIL" nillable="true" type="tns:TB_PERFIL" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="RL_PERFIL_MENU" nillable="true" type="tns:RL_PERFIL_MENU" />
+  <xs:complexType name="RL_TBPERFIL_TBRECURSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_PERFIL" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_RECURSO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ST_CRUD" type="xs:short" />
+      <xs:element minOccurs="0" name="TB_PERFIL" nillable="true" type="tns:TB_PERFIL" />
+      <xs:element minOccurs="0" name="TB_RECURSO" nillable="true" type="tns:TB_RECURSO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="RL_TBPERFIL_TBRECURSO" nillable="true" type="tns:RL_TBPERFIL_TBRECURSO" />
+  <xs:complexType name="TB_RECURSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_RECURSO_PAI" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_SEQ_RECURSO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_SISTEMA" type="xs:int" />
+      <xs:element minOccurs="0" name="DS_FORM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_NOME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RL_TBPERFIL_TBRECURSO" nillable="true" type="tns:ArrayOfRL_TBPERFIL_TBRECURSO" />
+      <xs:element minOccurs="0" name="ST_HABILITADO" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ST_VISIVEL" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TB_MENU" nillable="true" type="tns:ArrayOfTB_MENU" />
+      <xs:element minOccurs="0" name="TB_RECURSO1" nillable="true" type="tns:ArrayOfTB_RECURSO" />
+      <xs:element minOccurs="0" name="TB_RECURSO2" nillable="true" type="tns:TB_RECURSO" />
+      <xs:element minOccurs="0" name="TB_SISTEMA" nillable="true" type="tns:TB_SISTEMA" />
+      <xs:element minOccurs="0" name="TB_TIPO_RECURSO" nillable="true" type="tns:TB_TIPO_RECURSO" />
+      <xs:element minOccurs="0" name="TP_RECURSO" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_RECURSO" nillable="true" type="tns:TB_RECURSO" />
+  <xs:complexType name="ArrayOfRL_TBPERFIL_TBRECURSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RL_TBPERFIL_TBRECURSO" nillable="true" type="tns:RL_TBPERFIL_TBRECURSO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRL_TBPERFIL_TBRECURSO" nillable="true" type="tns:ArrayOfRL_TBPERFIL_TBRECURSO" />
+  <xs:complexType name="ArrayOfTB_MENU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_MENU" nillable="true" type="tns:TB_MENU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_MENU" nillable="true" type="tns:ArrayOfTB_MENU" />
+  <xs:complexType name="TB_MENU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_ATALHO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CO_MENU_PAI" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_RECURSO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_SEQ_MENU" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_SISTEMA" type="xs:int" />
+      <xs:element minOccurs="0" name="DS_DICA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_NOME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_URL_IMAGEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NU_ORDEM" type="xs:int" />
+      <xs:element minOccurs="0" name="TB_MENU1" nillable="true" type="tns:ArrayOfTB_MENU" />
+      <xs:element minOccurs="0" name="TB_MENU2" nillable="true" type="tns:TB_MENU" />
+      <xs:element minOccurs="0" name="TB_RECURSO" nillable="true" type="tns:TB_RECURSO" />
+      <xs:element minOccurs="0" name="TB_SISTEMA" nillable="true" type="tns:TB_SISTEMA" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_MENU" nillable="true" type="tns:TB_MENU" />
+  <xs:complexType name="TB_SISTEMA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_SEQ_SISTEMA" type="xs:int" />
+      <xs:element minOccurs="0" name="DS_NOME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NU_VERSAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TB_EXCECAO" nillable="true" type="tns:ArrayOfTB_EXCECAO" />
+      <xs:element minOccurs="0" name="TB_MENU" nillable="true" type="tns:ArrayOfTB_MENU" />
+      <xs:element minOccurs="0" name="TB_PERFIL" nillable="true" type="tns:ArrayOfTB_PERFIL" />
+      <xs:element minOccurs="0" name="TB_RECURSO" nillable="true" type="tns:ArrayOfTB_RECURSO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_SISTEMA" nillable="true" type="tns:TB_SISTEMA" />
+  <xs:complexType name="ArrayOfTB_EXCECAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_EXCECAO" nillable="true" type="tns:TB_EXCECAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_EXCECAO" nillable="true" type="tns:ArrayOfTB_EXCECAO" />
+  <xs:complexType name="TB_EXCECAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_SEQ_EXCECAO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_SISTEMA" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_USUARIO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DS_ERRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_MENSAGEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_NAVEGADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DT_ERRO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TB_SISTEMA" nillable="true" type="tns:TB_SISTEMA" />
+      <xs:element minOccurs="0" name="TXT_IP_SERVIDOR" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_EXCECAO" nillable="true" type="tns:TB_EXCECAO" />
+  <xs:complexType name="RL_TBPERFIL_TBUSUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_PERFIL" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_USUARIO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_USUARIO_CADASTROU" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_USUARIO_EXCLUIU" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DT_CADASTRO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DT_EXCLUSAO" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TB_PERFIL" nillable="true" type="tns:TB_PERFIL" />
+      <xs:element minOccurs="0" name="TB_USUARIO" nillable="true" type="tns:TB_USUARIO" />
+      <xs:element minOccurs="0" name="TB_USUARIO1" nillable="true" type="tns:TB_USUARIO" />
+      <xs:element minOccurs="0" name="TB_USUARIO2" nillable="true" type="tns:TB_USUARIO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="RL_TBPERFIL_TBUSUARIO" nillable="true" type="tns:RL_TBPERFIL_TBUSUARIO" />
+  <xs:complexType name="TB_TIPO_RECURSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_SEQ_TIPO_RECURSO" type="xs:int" />
+      <xs:element minOccurs="0" name="DS_ASSEMBLY_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_TIPO_RECURSO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TB_RECURSO" nillable="true" type="tns:ArrayOfTB_RECURSO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_TIPO_RECURSO" nillable="true" type="tns:TB_TIPO_RECURSO" />
+  <xs:complexType name="ArrayOfTB_RECURSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_RECURSO" nillable="true" type="tns:TB_RECURSO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_RECURSO" nillable="true" type="tns:ArrayOfTB_RECURSO" />
+  <xs:complexType name="TB_LOG_ACAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_SEQ_ACAO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CO_SISTEMA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_USUARIO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DS_ACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_NAVEGADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DT_ACAO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TB_USUARIO" nillable="true" type="tns:TB_USUARIO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_LOG_ACAO" nillable="true" type="tns:TB_LOG_ACAO" />
+  <xs:complexType name="TB_SITUACAO_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_SITUACAO" type="xs:short" />
+      <xs:element minOccurs="0" name="DS_SITUACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TB_USUARIO" nillable="true" type="tns:ArrayOfTB_USUARIO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_SITUACAO_USUARIO" nillable="true" type="tns:TB_SITUACAO_USUARIO" />
+  <xs:complexType name="ArrayOfTB_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_USUARIO" nillable="true" type="tns:TB_USUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_USUARIO" nillable="true" type="tns:ArrayOfTB_USUARIO" />
+  <xs:complexType name="RL_USUARIO_UNIDADE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_UNIDADE" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_USUARIO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TB_USUARIO" nillable="true" type="tns:TB_USUARIO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="RL_USUARIO_UNIDADE" nillable="true" type="tns:RL_USUARIO_UNIDADE" />
+  <xs:complexType name="TB_AREA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_EMPRESA" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_SEQ_AREA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DS_AREA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DS_SIGLA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TB_EMPRESA" nillable="true" type="tns:TB_EMPRESA" />
+      <xs:element minOccurs="0" name="TB_USUARIO" nillable="true" type="tns:ArrayOfTB_USUARIO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_AREA" nillable="true" type="tns:TB_AREA" />
+  <xs:complexType name="TB_EMPRESA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_SEQ_EMPRESA" type="xs:int" />
+      <xs:element minOccurs="0" name="DS_EMPRESA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TB_AREA" nillable="true" type="tns:ArrayOfTB_AREA" />
+      <xs:element minOccurs="0" name="TB_CARGO" nillable="true" type="tns:ArrayOfTB_CARGO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_EMPRESA" nillable="true" type="tns:TB_EMPRESA" />
+  <xs:complexType name="ArrayOfTB_AREA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_AREA" nillable="true" type="tns:TB_AREA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_AREA" nillable="true" type="tns:ArrayOfTB_AREA" />
+  <xs:complexType name="ArrayOfTB_CARGO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_CARGO" nillable="true" type="tns:TB_CARGO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_CARGO" nillable="true" type="tns:ArrayOfTB_CARGO" />
+  <xs:complexType name="TB_CARGO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_EMPRESA" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_SEQ_CARGO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DS_CARGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TB_EMPRESA" nillable="true" type="tns:TB_EMPRESA" />
+      <xs:element minOccurs="0" name="TB_USUARIO" nillable="true" type="tns:ArrayOfTB_USUARIO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_CARGO" nillable="true" type="tns:TB_CARGO" />
+  <xs:complexType name="TB_ARQUIVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CO_DATA_REFERENCIA" type="xs:long" />
+      <xs:element minOccurs="0" name="CO_JOB" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_SEQ_ARQUIVO" type="xs:int" />
+      <xs:element minOccurs="0" name="CO_USUARIO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DS_CAMINHO_AZURE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DT_FIM_PROCESSAMENTO" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DT_INICIO_PROCESSAMENTO" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NO_ARQUIVO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NU_REGISTROS_GRAVADOS" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NU_REGISTROS_LIDOS" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NU_REGISTROS_REJEITADOS" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NU_SEQUENCIAL_ARQUIVO" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ST_ATIVO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ST_PROCESSAMENTO" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="TB_USUARIO" nillable="true" type="tns:TB_USUARIO" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_ARQUIVO" nillable="true" type="tns:TB_ARQUIVO" />
+  <xs:complexType name="ArrayOfTB_PERFIL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_PERFIL" nillable="true" type="tns:TB_PERFIL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_PERFIL" nillable="true" type="tns:ArrayOfTB_PERFIL" />
+  <xs:complexType name="ArrayOfRL_TBPERFIL_TBUSUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RL_TBPERFIL_TBUSUARIO" nillable="true" type="tns:RL_TBPERFIL_TBUSUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRL_TBPERFIL_TBUSUARIO" nillable="true" type="tns:ArrayOfRL_TBPERFIL_TBUSUARIO" />
+  <xs:complexType name="ArrayOfRL_USUARIO_UNIDADE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RL_USUARIO_UNIDADE" nillable="true" type="tns:RL_USUARIO_UNIDADE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRL_USUARIO_UNIDADE" nillable="true" type="tns:ArrayOfRL_USUARIO_UNIDADE" />
+  <xs:complexType name="ArrayOfTB_ARQUIVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_ARQUIVO" nillable="true" type="tns:TB_ARQUIVO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_ARQUIVO" nillable="true" type="tns:ArrayOfTB_ARQUIVO" />
+  <xs:complexType name="ArrayOfTB_LOG_ACAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_LOG_ACAO" nillable="true" type="tns:TB_LOG_ACAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_LOG_ACAO" nillable="true" type="tns:ArrayOfTB_LOG_ACAO" />
+  <xs:complexType name="TB_USUARIO_ANTIGO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="char_passwordhash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="char_salt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod_funcionario" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cod_usuario" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cod_usuario_cadastro" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cod_usuario_confirmacao" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="dat_cadastro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dat_confirmacao" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dat_nascimento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flag_administrador" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flag_alterar_senha" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="flag_status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_usuario" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="num_cpf" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="num_matricula" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="num_rg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="num_valor_meta" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="txt_area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="txt_cargo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="txt_celular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="txt_email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="txt_nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="txt_nome_usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="txt_orgao_expedidor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="txt_senha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="txt_telefone" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="TB_USUARIO_ANTIGO" nillable="true" type="tns:TB_USUARIO_ANTIGO" />
+  <xs:complexType name="ArrayOfTB_SITUACAO_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_SITUACAO_USUARIO" nillable="true" type="tns:TB_SITUACAO_USUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTB_SITUACAO_USUARIO" nillable="true" type="tns:ArrayOfTB_SITUACAO_USUARIO" />
+</xs:schema>

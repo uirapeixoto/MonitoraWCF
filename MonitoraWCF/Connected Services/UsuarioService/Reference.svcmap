@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="638c2370-330f-4482-8134-25518df4653d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://servicescxs.compline.com.br/securityService/UsuarioService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UsuarioService6.xsd" MetadataType="Schema" ID="18b5fe89-0b1d-4837-a013-1a43f4f8dec0" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UsuarioService61.xsd" MetadataType="Schema" ID="99ef8251-25c4-4f0c-9378-05707f3ad66c" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd6" />
+    <MetadataFile FileName="UsuarioService62.xsd" MetadataType="Schema" ID="a19e3f4f-7199-43a5-a920-e782c1b46f3b" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd5" />
+    <MetadataFile FileName="UsuarioService1.disco" MetadataType="Disco" ID="325aaaa9-cba6-41df-ad3d-7beda70756f8" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?disco" />
+    <MetadataFile FileName="UsuarioService63.xsd" MetadataType="Schema" ID="3c7b9527-e51e-4351-8e96-585a433cf14a" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UsuarioService64.xsd" MetadataType="Schema" ID="0678a7e5-0e76-48b9-9deb-2d0f0ff87469" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UsuarioService65.xsd" MetadataType="Schema" ID="20eaf527-9f90-47cf-9686-bf7c10ae6ef9" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UsuarioService1.wsdl" MetadataType="Wsdl" ID="99cb88e5-667c-4f6b-bc97-5f40cad1ae12" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?wsdl" />
+    <MetadataFile FileName="UsuarioService66.xsd" MetadataType="Schema" ID="bf97407d-38f9-430b-bda1-2636cf5340c1" SourceId="1" SourceUrl="https://servicescxs.compline.com.br/SecurityService/UsuarioService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
